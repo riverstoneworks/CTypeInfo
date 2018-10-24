@@ -1,6 +1,6 @@
 # **CTypeInfo Reference Manual** 
 ## I. Purpose
-C language data type description
+C language data type description is designed to access the object's properties in a uniform way without object's id. So that app can unify access to different objects with different data structures. *[Here's an application with it.][1]*
 ## II. TypeInf & ObjectInfo
    1. *TypeInf* describes C data type infomation and *ObjectInfo* describes C object information. They are struct with the following relationships:
       > ![class diagram](https://raw.github.com/riverstoneworks/CTypeInfo/master/doc/TypeInf_ObjectInfo.svg?sanitize=true)
@@ -190,3 +190,4 @@ There is a set of predefined macro to simplify coding.
 #define O_ACHAR(na,offs)
 #define O_ARRAY_ACHAR(na,el_num,offs)
 ```
+[1]:https://github.com/riverstoneworks/JsonCObject
