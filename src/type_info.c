@@ -6,6 +6,23 @@
  */
 #include "CTypeInfo/type_info.h"
 
+//fetch sub object
+const ObjectInfo* fetchSub(ObjectInfo* obj, char* name){
+	int i=0,list_size=obj->typeInf->size[1];
+
+	while(list_size>i&&strcmp(name,obj->typeInf->subObjInfo[i].name))++i;
+
+	return i<list_size?obj->typeInf->subObjInfo+i:NULL;
+}
+//get the number of sub objects
+size_t getSubNum(TypeInf* typeInf){
+	return typeInf->size[1];
+}
+
+size_t getSize(TypeInf* typeInf){
+	return typeInf->size[0];
+}
+
 const TypeInf T_INF_INT8={
 		.name="int8",
 		.type=INT8,

@@ -45,7 +45,12 @@ struct OBJECT_INF{
 	void * offset; // when it is used as offset address , the type is int.
 };
 
-
+//fetch sub object
+extern const ObjectInfo* fetchSub(ObjectInfo*, char*);
+//get the number of sub objects
+extern size_t getSubNum(TypeInf*);
+//get the size of type
+extern size_t getSize(TypeInf* typeInf);
 //base type info
 extern const TypeInf T_INF_INT8;
 extern const TypeInf T_INF_UINT8;
