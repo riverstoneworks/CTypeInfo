@@ -5,14 +5,16 @@ C language data type description
    1. *TypeInf* describes C data type infomation and *ObjectInfo* describes C object information. They are struct with the following relationships:
       > ![class diagram](https://raw.github.com/riverstoneworks/CTypeInfo/master/doc/TypeInf_ObjectInfo.svg?sanitize=true)
        
-	  *ObjectInfo* :
+      *ObjectInfo* :
+   
       Attribute |Type|Note
       :--:|:--:|:--:
-	     name | char* | object name 
-	     typeInfo | TypeInf* | pointer to the TypeInf of the object type
-	     offset | long | The offset relative to the parent object's starting address
-   
- 	  *TypeInf* :
+      name | char* | object name 
+      typeInfo | TypeInf* | pointer to the TypeInf of the object type
+      offset | long | The offset relative to the parent object's starting address
+
+      *TypeInf* :
+
       Attribute |Type|Note
       :--:|:--:|:--:
       name | char* | type name 
