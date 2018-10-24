@@ -11,7 +11,7 @@ C language data type description
       :--:|:--:|:--:
       name | char* | object name 
       typeInfo | TypeInf* | pointer to the TypeInf of the object type
-      offset | long | The offset relative to the parent object's starting address
+      offset | long | The offset relative to the parent object's starting address or memory address without parent
 
       *TypeInf* :
 
@@ -80,37 +80,77 @@ const TypeInf T_INF_BOOLEAN;
 const TypeInf T_INF_ACHAR;
 ```
 ## IV. Predefined macro
-There is a set of predefined macro to simplifies coding.
+There is a set of predefined macro to simplify coding.
 ```C
-//for Struct Type
+/*
+* Struct Type
+* na: type name
+* attr_num: subobject number
+*/
 #define	T(na,attr_num,...)
-//Array type
+/*
+* Array type
+* el_ty_na: element type name 
+* el_type: element type decription
+*/
 #define T_ARRAY(el_ty_na,el_num,el_type)
 //String type
 #define T_STRING(length)
-//pointer type to object
+/*pointer type to object
+* na: type name
+* ty: the type decription of object that is pointed to
+*/
 #define	T_PTR_OBJ(na,ty)
-//pointer type to string
+/*pointer type to string
+* na: type name
+* len: string length
+*/
 #define	T_PTR_STR(na,len) 
-//pointer type to array
+/*pointer type to array
+* na: type name
+* el_ty_na: element type name
+* el_num: element number
+* el_type: element type decription
+*/
 #define	T_PTR_ARRAY(na,el_ty_na,el_num,el_type)
 
-//ObjectInfo
+/*ObjectInfo
+* na : name 
+* ty : type decription
+* offs: offset relative to the parent object's starting address or memory address without parent
+*/
 #define O(na,ty,offs)
 //string object info
 #define O_STR(na,len,offs)
-//array object info
+/*array object info
+* na : array name 
+* el_ty_na: element type name
+* el_num: element number
+* el_ty : type decription
+* offs: offset relative to the array starting address
+*/
 #define O_ARRAY(na,el_ty_na,el_num,el_type,offs)
-//pointer to object
+/*pointer
+* na : pointer name 
+* ty: type decription
+* offs: offset
+*/
 #define O_PTR_OBJ(na,ty,offs)
 //pointer to string
 #define O_PTR_STR(na,len,offs) 
-//pointer to array
+/*pointer to array
+* na : pointer name 
+* el_ty_na: element type name
+* el_num: element number
+* el_type: element type decription
+* offs: offset
+*/
 #define O_PTR_ARRAY(na,el_ty_na,el_num,el_type,offs)
 
+//8 bit int
 #define O_INT8(na,offs)
 #define O_ARRAY_INT8(na,el_num,offs)
-
+//8 bit usigned int
 #define O_UINT8(na,offs)
 #define O_ARRAY_UINT8(na,el_num,offs)
 
