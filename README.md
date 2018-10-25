@@ -63,7 +63,7 @@ C language data type description is designed to access the object's properties i
 	  ```
 
 ## III. Predefined type descriptions
-There is some predefined type decriptions for base data types.
+There is a set of predefined type decriptions for base data types.
 ```C
 const TypeInf T_INF_INT8;
 const TypeInf T_INF_UINT8;
