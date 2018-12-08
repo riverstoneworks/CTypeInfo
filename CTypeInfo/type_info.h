@@ -8,6 +8,7 @@
 #ifndef TYPE_INFO_H_
 #define TYPE_INFO_H_
 #include <stddef.h>
+#include <stdbool.h>
 typedef struct OBJECT_INF ObjectInfo;
 
 typedef struct TYPE_INF{
@@ -195,7 +196,7 @@ extern const TypeInf T_INF_ACHAR;
 	O(na,T_INF_BOOLEAN,offs)
 
 #define O_ARRAY_BOOLEAN(na,el_num,offs) \
-		O_ARRAY(na,char,el_num,T_INF_BOOLEAN,offs)
+		O_ARRAY(na,bool,el_num,T_INF_BOOLEAN,offs)
 
 #define O_ACHAR(na,offs) \
 	O(na,T_INF_ACHAR,offs)
